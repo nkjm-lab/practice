@@ -11,11 +11,11 @@ with open('head_10000.sam','r') as input:
 		if line == '':
 			break
 		
-		line_array = re.split('[\s\t]+',line)
+		line_list = re.split('[\s\t]+',line)
 			
-		for x in line_array:
-			if x.startswith('CB'):
-				array_CB = re.split(':',x)
-				print(array_CB[2],file=output)
+		for element in line_list:
+			if element.startswith('CB'):
+				CB_list = re.split(':', element)
+				print(CB_list[2],file=output)
 		
 output.close()
